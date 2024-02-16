@@ -1,6 +1,6 @@
 # Instagram Post
 
-![Project Preview](https://raw.githubusercontent.com/4GeeksAcademy/swckd-instagram-post/main/swckd-instagram-post.png)
+![Project Preview](https://github.com/4GeeksAcademy/swckd-Instagram-Photo-Feed-with-Bootstrap/blob/ca6928cbafdb713ea4a85de4930f3295e812a389/Screenshot.gif)
 
 This project is part of my learning journey in web development. I've used Bootstrap and JavaScript to create it.
 
