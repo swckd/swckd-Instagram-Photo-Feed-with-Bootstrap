@@ -1,10 +1,13 @@
 const gridToggler = document.getElementById("gridToggler");
 const gridList = document.getElementById("gridList");
+
 let isGrid = false;
-console.log(isGrid);
 
 gridToggler.addEventListener("click", () => {
   let isGrid = true;
+
+  gridToggler.setAttribute("class", "bi-grid-3x2-gap-fill");
+  listToggler.setAttribute("class", "bi bi-list");
 
   toggler(isGrid);
 });
@@ -14,19 +17,32 @@ const listToggler = document.getElementById("listToggler");
 listToggler.addEventListener("click", () => {
   let isGrid = false;
 
+  gridToggler.setAttribute("class", "bi-grid-3x2-gap");
+  listToggler.setAttribute("class", "bi bi-view-list");
+
   toggler(isGrid);
 });
 
 function toggler(isGrid) {
-  console.log(isGrid);
-
   const cards = document.getElementsByClassName("card");
 
-  //   gridList.classList.remove("row-cols-xs-1");
+  if (isGrid) {
+    gridList.classList.remove("row-cols-1");
 
-  //   gridList.classList.add("row-cols-xs-3");
+    gridList.classList.add("row-cols-3");
+  } else {
+    gridList.classList.add("row-cols-1");
+
+    gridList.classList.remove("row-cols-3");
+  }
 
   for (let i = 0; i < cards.length; i++) {
+    if (isGrid) {
+      cards[i].classList.remove("custom-size-500");
+    } else {
+      cards[i].classList.add("custom-size-500");
+    }
+
     const children = cards[i].querySelectorAll("*");
 
     for (let e = 0; e < children.length; e++) {
@@ -41,3 +57,31 @@ function toggler(isGrid) {
     }
   }
 }
+
+const biHearts = document.querySelectorAll(".bi-heart");
+
+biHearts.forEach((element) => {
+  element.addEventListener("click", function () {
+    if (element.classList.contains("bi-heart")) {
+      element.classList.remove("bi-heart");
+      element.classList.add("bi-heart-fill");
+    } else {
+      element.classList.add("bi-heart");
+      element.classList.remove("bi-heart-fill");
+    }
+  });
+});
+
+const biBookmarks = document.querySelectorAll(".bi-bookmark");
+
+biBookmarks.forEach((element) => {
+  element.addEventListener("click", function () {
+    if (element.classList.contains("bi-bookmark")) {
+      element.classList.remove("bi-bookmark");
+      element.classList.add("bi-bookmark-fill");
+    } else {
+      element.classList.add("bi-bookmark");
+      element.classList.remove("bi-bookmark-fill");
+    }
+  });
+});
