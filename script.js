@@ -62,13 +62,8 @@ const biHearts = document.querySelectorAll(".bi-heart");
 
 biHearts.forEach((element) => {
   element.addEventListener("click", function () {
-    if (element.classList.contains("bi-heart")) {
-      element.classList.remove("bi-heart");
-      element.classList.add("bi-heart-fill");
-    } else {
-      element.classList.add("bi-heart");
-      element.classList.remove("bi-heart-fill");
-    }
+    element.classList.toggle("bi-heart");
+    element.classList.toggle("bi-heart-fill");
   });
 });
 
@@ -76,12 +71,7 @@ const biBookmarks = document.querySelectorAll(".bi-bookmark");
 
 biBookmarks.forEach((element) => {
   element.addEventListener("click", function () {
-    if (element.classList.contains("bi-bookmark")) {
-      element.classList.remove("bi-bookmark");
-      element.classList.add("bi-bookmark-fill");
-    } else {
-      element.classList.add("bi-bookmark");
-      element.classList.remove("bi-bookmark-fill");
-    }
+    element.classList.toggle("bi-bookmark");
+    element.classList.toggle("bi-bookmark-fill");
   });
 });
